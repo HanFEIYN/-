@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char s[1000];
+	char w[10];
+	int wlen,slen;
+	int cnt=0;
+	int i,j;
+	printf("Please input a sentence:\n");
+    gets(s);
+	printf("Please input a word:\n");
+	gets(w);
+	strlwr(s);
+	strlwr(w);
+	wlen=strlwr(w);
+	slen=strlwr(s);
+	
+	for(i=0;i<=slen-wlen;i++)
+	{
+		char tempw[10];
+		tempw[wlen]='\0';
+		for(j=0;j<wlen;j++)tempw[j]=s[i+j];
+		if(strcmp(tempw,w)==0)cnt++;
+	}
+	printf("%d",cnt);
+	return 0;
+}
